@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="130dp"    
+    android:orientation="vertical" >
+
+	<LinearLayout 
+	    android:id="@+id/pop_layout"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"	   	    
+	    android:orientation="vertical"  >	    
+	    <TextView 
+	      android:id="@+id/delete_music_dialog_title"
+	      android:layout_width="fill_parent"
+	      android:layout_height="wrap_content"
+	      android:layout_marginTop="10dp"
+	      android:gravity="center_horizontal"
+	      android:text="@string/delete_music"       
+	      android:textSize="20sp"
+	      android:textColor="#ffbdbfe2"
+          android:textStyle="bold"  />	    
+	    <TextView 
+	      android:id="@+id/dialog_tv"
+	      android:layout_width="fill_parent"
+	      android:layout_height="wrap_content"
+	      android:layout_marginTop="3dp"
+	       android:layout_marginLeft="35dp"    
+	      android:text="@string/delete_music"
+	      android:textSize="17sp"
+	      android:textColor="#ffbdbfe2"
+          android:textStyle="bold"  />             	                             
+	</LinearLayout>
+	
+     <RadioGroup 
+            android:id="@+id/pop_rg_layout"
+            android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+            android:orientation="vertical" 
+			android:layout_below="@+id/pop_layout" >
+                <RadioButton
+                    android:id="@+id/rb_one"
+			        android:layout_width="wrap_content" 
+			        android:layout_height="wrap_content"
+			        android:layout_marginLeft="30dp"     			        
+			        android:textColor="#ffbdbfe2" 
+			        android:text="@string/delete_music_irc" />             
+			     <RadioButton
+			         android:id="@+id/rb_all"
+			        android:layout_width="wrap_content" 
+			        android:layout_height="wrap_content"	        
+			        android:layout_marginLeft="30dp" 
+			        android:textColor="#ffbdbfe2"
+			        android:text="@string/delete_music_all"   />				        
+    </RadioGroup>   
+	
+	<LinearLayout 
+	    android:id="@+id/pop_botton_layout"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"	   	    
+	    android:orientation="horizontal"
+	    android:layout_below="@+id/pop_rg_layout" >	   	    
+	    
+	    <Button 
+	        android:id="@+id/btn_cancel"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"	  
+	        android:layout_weight="1"
+	        android:text="@string/cancel"
+	        android:textColor="#ffbdbfe2"
+	        style="?android:attr/borderlessButtonStyle"   />
+	    
+	    <Button 
+	        android:id="@+id/btn_ok"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"	  
+	        android:layout_weight="1"
+	        android:text="@string/delete"
+	        android:textColor="#ffbdbfe2"
+	        style="?android:attr/borderlessButtonStyle"  />
+	    
+	</LinearLayout>
+	
+</RelativeLayout>

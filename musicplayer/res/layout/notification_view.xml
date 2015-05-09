@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/notification_view_layout"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal" >
+    
+    <ImageView
+            android:id="@+id/notification_pic_iv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_launcher" />
+    
+	 <LinearLayout
+            android:id="@+id/notification_about_layout"
+            android:layout_width="wrap_content"      
+            android:layout_height="60dp"           
+            android:orientation="vertical" >           
+	       <TextView
+		         android:id="@+id/notification_name_tv"
+		         android:layout_width="wrap_content"
+		         android:layout_height="25dp"        
+		         android:layout_marginLeft="10dp"        
+		         android:text="@string/musicname"
+		         android:textColor="#ffbdbfe2"
+		         android:textSize="7pt" />		   		                
+		   <TextView
+		         android:id="@+id/notification_singer_tv"
+		         android:layout_width="wrap_content"
+		         android:layout_height="25dp"     
+		         android:layout_marginLeft="10dp"                    
+		         android:text="@string/musicsinger"
+		         android:textColor="#ffbdbfe2"
+		         android:textSize="6pt" />	                
+        </LinearLayout>
+     
+	   <LinearLayout
+		    android:id="@+id/notification_control_layout"
+		    android:layout_width="match_parent"
+		    android:layout_height="60dp"     
+		    android:layout_marginTop="10dp"  
+		    android:orientation="horizontal" >		            		            
+		    <Button 
+	              android:id="@+id/notification_pre_bt"  
+	              android:layout_width="40dp"
+				  android:layout_height="40dp"				  
+				  android:layout_marginLeft="20dp"
+				  android:layout_marginRight="20dp"
+				  style="?android:attr/buttonBarButtonStyle"   
+				  android:background="@drawable/previous_bt_selector" />               
+             <Button
+				        android:id="@+id/notification_play_bt"
+				        android:layout_width="40dp"
+				        android:layout_height="40dp"
+				        android:layout_gravity="center_horizontal"
+				        style="?android:attr/buttonBarButtonStyle"   
+				        android:background="@drawable/play_bt_selector"/> 			          
+			  <Button 
+	                    android:id="@+id/notification_next_bt"  
+	                    android:layout_width="40dp"
+				        android:layout_height="40dp"
+				        android:layout_marginLeft="20dp"
+				        android:layout_marginRight="20dp"
+				        style="?android:attr/buttonBarButtonStyle"   
+				        android:background="@drawable/next_bt_selector" /> 			        			  
+            </LinearLayout>
+                                              
+	 
+</LinearLayout>

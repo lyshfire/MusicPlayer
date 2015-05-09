@@ -1,0 +1,8 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">	
+	<item 
+		android:state_selected="true"
+		android:drawable="@drawable/bt_widge_lrc_press"/>
+	<item 
+	    android:state_selected="false"
+		android:drawable="@drawable/bt_widge_lrc_nor"/>
+</selector>

@@ -1,0 +1,117 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayoutLoveActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/music_background"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/topbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" 
+        android:background="@drawable/topbar_bg"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/music_list_tv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/lovemusiclist"
+            android:textColor="#ffffff"
+            android:textSize="19sp" >
+        </TextView>       
+
+        <Button
+            android:id="@+id/return_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/return_main_selector"/>        
+    </RelativeLayout>
+
+    <RelativeLayout
+          android:id="@+id/middlebar_layout" 
+          android:layout_width="match_parent" 
+          android:layout_height="match_parent"    
+          android:layout_below="@+id/topbar_layout"
+          android:layout_above="@+id/bottombar_layout"  >        
+          <ListView 
+                android:id="@+id/songlist_lv" 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"  >            
+          </ListView>         
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/bottombar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true" 
+        android:layout_alignParentLeft="true"  
+        android:background="@drawable/bottombar_bg"   >
+
+        <ImageView
+            android:id="@+id/music_album_iv"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_launcher" />
+        
+        <RelativeLayout
+            android:id="@+id/music_about_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_alignTop="@+id/music_album_iv"
+            android:layout_toRightOf="@id/music_album_iv" >
+            <TextView
+                android:id="@+id/music_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="2.0dp"
+                android:layout_marginTop="5.0dp"
+                android:text="@string/musicname"
+                android:textColor="#ffffff"
+                android:textSize="7pt" />
+            <TextView
+                android:id="@+id/music_singer_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/music_name_tv"
+                android:layout_marginLeft="5.0dp"
+                android:layout_marginTop="2.0dp"
+                android:text="@string/musicsinger"
+                android:textColor="#ffffff"
+                android:textSize="7pt" />
+        </RelativeLayout>
+            
+        <ToggleButton
+            android:id="@+id/music_play_bt"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="70dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/play_bt_selector"
+            android:textOff=""
+            android:textOn="" />        
+        <Button
+		    android:id="@+id/btn_love"
+		    android:layout_width="50dp"
+		    android:layout_height="50dp" 		    
+		    android:layout_marginRight="5dp"
+		    android:layout_alignParentRight="true"
+		     android:layout_centerVertical="true"
+		    android:background="@drawable/favorite_bt_selector" />
+    </RelativeLayout>
+    
+</RelativeLayout>

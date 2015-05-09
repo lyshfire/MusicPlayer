@@ -1,0 +1,222 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/music_playing"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/playerbackground" >
+
+    <RelativeLayout
+        android:id="@+id/topBar_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/topbar_bg" >
+        
+        <Button
+            android:id="@+id/jumplist_bt"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/jump_list_selector" />        
+        <TextView
+            android:id="@+id/playing_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/waitingplay"
+            android:textColor="#000000"
+            android:textSize="19sp" ></TextView>
+          <Button
+            android:id="@+id/playorder_bt"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/repeat_bt_selector" />  
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/music_detail_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/playing_background"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/playing_songname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:singleLine="true"
+            android:text="@string/musicname"
+            android:textColor="#ffffffff"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/playing_songsinger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/playing_songname"
+            android:layout_centerHorizontal="true"
+            android:singleLine="true"
+            android:text="@string/musicsinger"
+            android:textColor="#ffbdbfe2"
+            android:textStyle="bold" />
+         <TextView
+            android:id="@+id/songcount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"     
+            android:layout_marginTop="20dp"     
+            android:layout_marginLeft="280dp"
+            android:text="@string/songcount"
+             android:textColor="#ffffffff"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/center_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:layout_below="@+id/music_detail_layout"    
+	    android:layout_above="@+id/bottomBar_layout"    >       
+        	        
+	       <com.example.myselfview.DragableLuncher
+	           xmlns:cwd="http://schemas.android.com/apk/res"
+                android:id="@+id/space"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                cwd:default_screen="1" >
+                <include
+                    android:id="@+id/music_list_view_layout"
+                    layout="@layout/music_list_view" />
+                <include
+                    android:id="@+id/playing_view_layout"
+                    layout="@layout/playing_view" />            
+                <include
+                    android:id="@+id/irl_view_layout"
+                    layout="@layout/irl_view" />
+	           </com.example.myselfview.DragableLuncher>
+    </RelativeLayout>
+                  
+    <RelativeLayout
+        android:id="@+id/bottomBar_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="105dip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"  >
+        
+        <LinearLayout
+                android:id="@+id/below_line1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/below_line2"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal" >
+                <ImageView
+                    android:id="@+id/below_line1_Iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ad_indicator" />
+                <ImageView
+                    android:id="@+id/below_line2_Iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ad_indicator_focused" />   
+                 <ImageView
+                    android:id="@+id/below_line3_Iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ad_indicator" />                        
+        </LinearLayout>
+        
+        <LinearLayout
+                android:id="@+id/below_line2"
+                android:layout_width="fill_parent"
+                android:layout_height="30dip"
+                android:layout_above="@+id/below_line3"
+                android:gravity="center" >
+               <TextView
+				    android:id="@+id/currentProgress_tv"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"		
+				    android:gravity="left"	   
+				    android:text="@string/currenttime"
+				    android:textColor="#000" />		
+               <SeekBar
+				    android:id="@+id/music_progressBar"
+				    android:layout_width="280dip"
+				    android:layout_height="wrap_content"     
+				    android:clickable="true"
+				    android:focusable="false"
+				    android:paddingLeft="5dip"
+				    android:paddingRight="5dip"
+				    android:thumbOffset="5dip" />					 	    
+		        <TextView
+				    android:id="@+id/finalProgress_tv"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"		
+				    android:gravity="right"	         
+				    android:textColor="#000"
+				    android:text="@string/musictime" />	 
+        </LinearLayout>
+        
+        <LinearLayout
+                android:id="@+id/below_line3"
+                android:layout_width="fill_parent"
+                android:layout_height="60dip"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="1dip" 
+                android:background="@drawable/play_button_bg"  >
+		        <Button
+		             android:id="@+id/btn_love"
+		             android:layout_width="50dp"
+		             android:layout_height="50dp" 
+		             android:layout_marginLeft="5dip"
+		             android:gravity="center" 
+		             android:background="@drawable/favorite_bt_selector" />   
+		        <Button
+		            android:id="@+id/btn_pre"
+		            android:layout_width="40dp"
+		            android:layout_height="40dp"               		                   
+		            android:layout_marginLeft="30dip"
+		            android:background="@drawable/previous_bt_selector" />        
+		        <ToggleButton
+		            android:id="@+id/btn_play"
+		            android:layout_width="50dp"
+		            android:layout_height="50dp"		
+		            android:layout_marginLeft="30dip"      
+		            android:background="@drawable/play_bt_selector"
+		            android:textOff=""
+		            android:textOn="" />        
+		        <Button
+		            android:id="@+id/btn_next"
+		            android:layout_width="40dp"
+		            android:layout_height="40dp"          
+		            android:layout_marginLeft="30dip"
+		            android:background="@drawable/next_bt_selector" />
+		        <Button
+		            android:id="@+id/btn_irl"
+		            android:layout_width="50dp"
+		            android:layout_height="50dp" 		  
+		            android:layout_marginLeft="30dip"        		            
+		            android:background="@drawable/lrc_bt_selector"  />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
